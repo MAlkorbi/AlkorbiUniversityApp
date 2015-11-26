@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Alkorbi University</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <!-- Include the fakeLoader.css -->
+    <link href="~/CSS/fakeLoader.css" rel="stylesheet" />
+    <!-- Include the sweetalert.css -->
+    <link href="~/CSS/sweetalert.css" rel="stylesheet" />
+
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Alkorbi University", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                    <li>@Html.ActionLink("Course Information", "Index", "CourseInformations")</li>
+                    <li>@Html.ActionLink("Course Enrollment", "Index", "Students")</li>
+                    <li>@Html.ActionLink("Enrolment Status", "Index", "Enrollments")</li>
+                    <li>@Html.ActionLink("Registered Users", "Index", "Account")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+
+                </ul>
+                <div id="fakeLoader"></div>
+                <button id="sweetalert">Log out</button>
+
+
+                <!-- Include jQuery -->
+                <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+                <!-- FakeLoader.js code-->
+                <script src="~/Scripts/fakeLoader.min.js"></script>
+
+                <!-- Include the sweetalert JavaScript file -->
+                <script src="~/Scripts/sweetalert.min.js"></script>
+
+                <!-- Using fakeLoader -->
+                <script>
+    $("#fakeLoader").fakeLoader();
+                </script>
+
+                <!-- Using sweetalert -->
+                <script>
+    $( "#sweetalert" ).click(function() {
+        swal( "Hello World!" );
+    });
+                </script>
+                <!-- Using sweetalert -->
+                <script>
+    $( "#sweetalert" ).click(function() {
+        swal({
+                title: "Log out Confirmation",
+                text: "Are you sure you want to log out without saving your work?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#5c2d91",
+                confirmButtonText: "Yes",
+                closeOnConfirm: false },
+                function(){
+                    swal("Success",
+                        "You have successfully logged out.",
+                        "success");
+                });
+    });
+                </script>
+                <!-- Using fakeLoader -->
+                <script type="text/javascript">
+    $("#fakeLoader").fakeLoader({
+        // imagePath:"yourPath/customizedImage.gif", //If you want can you insert your custom image
+        timeToHide: 1000,       // Animation lasts 1000 ms
+        zIndex: 999,            // Make sure that the loader is always on top of any other elements
+        spinner: "spinner2",    // Change spinner animation
+        bgColor: "#00CC00"      // Custom background colour
+    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Alkorbi University</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

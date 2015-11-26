@@ -1,0 +1,74 @@
+﻿@model AlkorbiUniversity.Models.CourseInformation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CourseInformation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credits)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreRequisites)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreRequisites)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishingDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseInformationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
